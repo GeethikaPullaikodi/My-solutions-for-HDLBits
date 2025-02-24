@@ -1,4 +1,5 @@
-//Create a 16-bit wide, 9-to-1 multiplexer. sel=0 chooses a, sel=1 chooses b, etc. For the unused cases (sel=9 to 15), set all output bits to '1'.
+//Create a 16-bit wide, 9-to-1 multiplexer. sel=0 chooses a, sel=1 chooses b, etc.
+//For the unused cases (sel=9 to 15), set all output bits to '1'.
 
 
 
@@ -8,8 +9,8 @@ module top_module(
     input [3:0] sel,                               //9 to 1
     output [15:0] out );                           //sel =0 = a
   
-    always @(*)begin      // indicates that its in combi logic,It ensures that the block 
-        case(sel)                           // executes whenever any of the input signals change.
+    always @(*)begin                              // indicates that its in combi logic,It ensures that the block 
+        case(sel)                                // executes whenever any of the input signals change.
     4'h0: out = a;
 	4'h1: out = b;
 	4'h2: out = c;
