@@ -11,7 +11,7 @@ module top_module(
   
     always @(*)begin                              // indicates that its in combi logic,It ensures that the block 
         case(sel)                                // executes whenever any of the input signals change.
-    4'h0: out = a;
+        4'h0: out = a;
 	4'h1: out = b;
 	4'h2: out = c;
 	4'h3: out = d;
@@ -20,8 +20,9 @@ module top_module(
 	4'h6: out = g;
 	4'h7: out = h;
 	4'h8: out = i;
-    default : out = 16'hffff;
-        endcase
+    default : out = 16'hffff;       //the default case out = 16'hffff; is used to handle situations where the sel 
+                                    input has an invalid value (i.e., when sel is greater than or equal to the number of inputs).
+      endcase
     end                
 endmodule
 
